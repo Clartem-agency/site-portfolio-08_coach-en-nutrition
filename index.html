@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara Dubois - Coach Nutrition | Équilibre Vital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Small CSS additions for effects not easily done with standard Tailwind */
+        .shadow-soft {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .shadow-warm {
+            box-shadow: 0 8px 25px rgba(232, 212, 150, 0.3);
+        }
+        .shadow-gold {
+            box-shadow: 0 8px 25px rgba(235, 212, 150, 0.5);
+        }
+        .bg-gradient-primary {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+        .bg-gradient-warm {
+             background-image: linear-gradient(to right, #f6ee3e3, #ebd496);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+                    },
+                    colors: {
+                        'primary': '#4b9b73',
+                        'sage': '#7f95ee', // This seems to be a typo in the user prompt, using the actual green from screenshots
+                        'sage-dark': '#367d59',
+                        'sage-light': '#cde4d9',
+                        'warm-light': '#f6ee3e3',
+                        'warm': '#e8d496',
+                        'warm-dark': '#d9c68a',
+                        'gold': '#ebd496',
+                        'gold-light': '#fbf8ef',
+                        'foreground': '#3d251d',
+                        'muted-foreground': '#6d697b',
+                        'background': '#ffffff',
+                        'card': '#ffffff',
+                        'border': '#e5e7eb',
+                        'input': '#e5e7eb',
+                        'ring': '#4b9b73',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-warm-light antialiased">
+    <div class="min-h-screen">
+
+        <!-- ============================================ -->
+        <!-- ============== NAVIGATION BAR ============== -->
+        <!-- ============================================ -->
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-2xl font-bold transition-colors text-sage-dark hover:text-primary">Équilibre Vital</a>
+                    </div>
+
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#about" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">À Propos</a>
+                            <a href="#services" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">Accompagnements</a>
+                            <a href="#approach" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">Mon Approche</a>
+                            <a href="#testimonials" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">Témoignages</a>
+                            <a href="#blog" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">Blog</a>
+                            <a href="#contact" class="transition-colors hover:scale-105 text-muted-foreground hover:text-primary">Contact</a>
+                        </div>
+                    </div>
+
+                    <!-- Desktop CTA Button -->
+                    <div class="hidden md:block">
+                        <a href="#booking" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-9 rounded-md px-3">
+                            Réserver un appel
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <!-- Mobile menu, show/hide based on menu state. -->
+             <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                    <a href="#about" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">À Propos</a>
+                    <a href="#services" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Accompagnements</a>
+                    <a href="#approach" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Mon Approche</a>
+                    <a href="#testimonials" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Témoignages</a>
+                    <a href="#blog" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                    <a href="#contact" class="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                    <div class="px-2 pt-2">
+                        <a href="#booking" class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm h-10 rounded-md px-3">
+                            Réserver un appel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- ============================================ -->
+            <!-- ================ HERO SECTION ================ -->
+            <!-- ============================================ -->
+            <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1540420773420-2850a26b685a?q=80&w=2532&auto=format&fit=crop');"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-sage-dark/80 via-sage/60 to-transparent"></div>
+
+                <div class="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Fatiguée des régimes ? Retrouvez votre énergie vitale et la paix digestive.</h1>
+                        <h2 class="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-3xl mx-auto">
+                            Coaching en nutrition fonctionnelle pour les femmes actives qui veulent se réconcilier
+                            avec leur assiette et leur corps, sans frustration ni privation.
+                        </h2>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg font-semibold">
+                                Découvrir mes accompagnements
+                            </a>
+                            <a href="#booking" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border h-14 rounded-xl px-10 text-lg font-semibold bg-white/10 border-white/30 text-white hover:bg-white hover:text-sage-dark backdrop-blur-sm">
+                                Réserver mon appel clarté (offert)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- ================ ABOUT SECTION ================ -->
+            <!-- ============================================ -->
+            <section id="about" class="w-full bg-warm-light py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-6">Mon histoire : de l'épuisement à l'équilibre</h2>
+                            <div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                <p>Pendant 10 ans, j'ai été cette femme que j'accompagne aujourd'hui. Avocate d'affaires à Paris, je vivais à 200 à l'heure, persuadée que la performance était la seule mesure du succès. Mon corps, lui, tirait la sonnette d'alarme : fatigue chronique, brouillard mental, et des douleurs digestives qui devenaient mon quotidien. J'ai tout essayé : les régimes à la mode, les restrictions drastiques, les "superaliments"... pour finalement me sentir encore plus épuisée et coupable de ne pas "y arriver".</p>
+                                <p>Le déclic a été un burn-out. Forcée de m'arrêter, j'ai découvert la nutrition fonctionnelle. J'ai compris que mon corps ne me trahissait pas, il essayait de me parler. J'ai appris à le nourrir, et pas seulement à le remplir. J'ai redécouvert le plaisir de manger sans culpabilité et, petit à petit, mon énergie est revenue, plus stable et plus puissante que jamais.</p>
+                                <p>Aujourd'hui, certifiée en nutrition et micro-nutrition, ma mission est de vous faire gagner ce temps précieux. Mon approche n'est pas un énième régime, mais une éducation bienveillante pour vous rendre autonome. Je vous transmets les clés pour comprendre les signaux de votre corps et construire une alimentation simple, gourmande et adaptée à votre vie active. Mon engagement est de vous offrir un espace d'écoute sans jugement, pour qu'ensemble, nous transformions votre alimentation en votre première source de vitalité.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop" alt="Clara Dubois, coach en nutrition" class="w-full rounded-2xl shadow-warm">
+                                <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-primary rounded-full opacity-20"></div>
+                                <div class="absolute -top-4 -left-4 w-16 h-16 bg-gold rounded-full opacity-30"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- ============== SERVICES SECTION ============== -->
+            <!-- ============================================ -->
+            <section id="services" class="w-full bg-background py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Des accompagnements pour nourrir votre vitalité</h2>
+                    </div>
+                    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                        
+                        <!-- Service Card 1 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 p-6 flex flex-col h-full">
+                            <div class="text-center pb-4">
+                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Séance "Bilan & Impulsion"</h3>
+                                <div class="mb-4">
+                                    <span class="text-2xl font-bold text-primary">150€</span>
+                                    <p class="text-sm text-muted-foreground">Séance de 90 minutes</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6 flex-grow flex flex-col">
+                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">Une séance unique et intensive de 90 minutes pour faire un état des lieux complet de votre situation. Idéale si vous vous sentez perdue et avez besoin d'une feuille de route claire et de premières actions concrètes pour retrouver votre bien-être.</p>
+                                <ul class="space-y-3 text-left">
+                                    <li class="flex items-start gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Analyse approfondie de votre questionnaire de vitalité</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Bilan de vos habitudes alimentaires et de votre mode de vie</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Identification de vos blocages et de vos besoins réels</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Définition de vos 3 premiers objectifs prioritaires</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Remise d'un plan d'action personnalisé après la séance</span>
+                                    </li>
+                                </ul>
+                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-sage-light text-sage-dark hover:bg-sage hover:text-white shadow-soft h-12 rounded-lg px-8 text-base">Réserver ma séance Bilan</a>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2 (Popular) -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative ring-2 ring-primary shadow-warm scale-105 transition-all duration-300 p-6 flex flex-col h-full">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <span class="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-semibold">Le plus populaire</span>
+                            </div>
+                            <div class="text-center pb-4 pt-4">
+                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Parcours "Équilibre Vital"</h3>
+                                <div class="mb-4">
+                                    <span class="text-2xl font-bold text-primary">Forfait 3 mois : 750€</span>
+                                    <p class="text-sm text-muted-foreground">(ou 3 x 250€)</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6 flex-grow flex flex-col">
+                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">L'accompagnement signature sur 3 mois pour une transformation durable. Nous allons au-delà de l'alimentation pour apaiser votre système digestif, stabiliser votre énergie et vous réconcilier durablement avec votre corps. C'est le chemin pour devenir l'experte de votre propre bien-être.</p>
+                                <ul class="space-y-3 text-left">
+                                   <li class="flex items-start gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">1 séance "Bilan & Impulsion" de 90 minutes</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">5 séances de suivi de 60 minutes (toutes les 2 semaines)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Protocoles personnalisés en nutrition et micro-nutrition</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Outils pratiques pour la gestion du stress et du sommeil</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Support par email entre les séances pour garder le cap</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Un carnet de recettes et de conseils sur-mesure</span>
+                                    </li>
+                                </ul>
+                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">Commencer ma transformation</a>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 p-6 flex flex-col h-full">
+                            <div class="text-center pb-4">
+                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Focus "Sérénité Digestive"</h3>
+                                <div class="mb-4">
+                                    <span class="text-2xl font-bold text-primary">Forfait 6 semaines : 490€</span>
+                                </div>
+                            </div>
+                            <div class="space-y-6 flex-grow flex flex-col">
+                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">Un programme ciblé de 6 semaines pour comprendre et apaiser durablement vos troubles digestifs (ballonnements, inconforts, transit...). Nous identifions les causes profondes pour retrouver un ventre serein et une digestion confortable au quotidien.</p>
+                                <ul class="space-y-3 text-left">
+                                    <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">1 séance de bilan digestif approfondi (75 min)</span>
+                                    </li>
+                                     <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">3 séances de suivi ciblées (45 min)</span>
+                                    </li>
+                                     <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Protocole alimentaire spécifique (type Fodmaps si nécessaire)</span>
+                                    </li>
+                                     <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Conseils en micro-nutrition pour soutenir votre flore intestinale</span>
+                                    </li>
+                                     <li class="flex items-start gap-3">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        <span class="text-sm text-muted-foreground">Fiches pratiques pour gérer les situations du quotidien (repas extérieur, etc.)</span>
+                                    </li>
+                                </ul>
+                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-warm text-foreground hover:bg-warm-dark shadow-soft hover:shadow-gold h-12 rounded-lg px-8 text-base">Apaiser ma digestion</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- ============== APPROACH SECTION ============== -->
+            <!-- ============================================ -->
+            <section id="approach" class="w-full bg-sage-light/30 py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Mon approche, pas à pas</h2>
+                        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                            Chaque accompagnement est unique, car vous êtes unique. Cependant, pour que vous vous sentiez
+                            en parfaite sécurité, notre collaboration suit un cadre bienveillant et structuré. Voici les
+                            grandes étapes de notre chemin ensemble.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <h3 class="tracking-tight text-lg font-bold text-foreground">L'Appel Clarté - Notre Première Connexion (Offert)</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed">Tout commence par un échange de 30 minutes, confidentiel et sans engagement. C'est un moment pour faire connaissance, que vous m'exposiez votre situation en toute confiance, et que nous validions ensemble que je suis la bonne personne pour vous aider. Mon but est de répondre à toutes vos questions pour que vous puissiez prendre votre décision en toute sérénité.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                </div>
+                                <h3 class="tracking-tight text-lg font-bold text-foreground">Le Parcours - Éducation & Action</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed">Au fil de nos séances, je ne vous donne pas de "régime" à suivre. Je vous éduque. Nous décodons ensemble les messages de votre corps. Je vous transmets des outils et des connaissances scientifiques simples pour que vous compreniez le "pourquoi" derrière chaque conseil. Chaque séance se termine par des actions claires et réalistes, adaptées à votre quotidien.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+                                </div>
+                                <h3 class="tracking-tight text-lg font-bold text-foreground">L'Autonomie - Votre Envol</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed">Mon objectif final est de devenir inutile ! À la fin de notre parcours, nous célébrons vos progrès et nous nous assurons que vous avez toutes les clés en main pour continuer votre chemin avec confiance. Vous ne repartez pas avec une dépendance à un coach, mais avec la capacité de faire des choix éclairés pour votre bien-être, pour la vie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- ============ TESTIMONIALS SECTION ============ -->
+            <!-- ============================================ -->
+            <section id="testimonials" class="w-full bg-warm-light py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Leurs Histoires, Leurs Transformations</h2>
+                    </div>
+                    <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+                        
+                        <!-- Testimonial 1 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="p-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
+                                <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"Avant de rencontrer Clara, j'étais épuisée et ballonnée en permanence. Je pensais que c'était une fatalité liée à mon travail stressant. Dès la première séance, son écoute et son analyse fine m'ont permis de comprendre les liens entre mon stress, mon sommeil et ma digestion. Elle ne m'a pas imposé un régime, elle m'a appris à manger différemment, avec plaisir et simplicité. Aujourd'hui, mon énergie est revenue, mes après-midis ne sont plus gâchés par l'inconfort digestif. C'est plus qu'un coaching, c'est une nouvelle hygiène de vie que j'ai adoptée sans effort."</blockquote>
+                                <div class="text-right">
+                                    <cite class="text-foreground font-semibold not-italic">Sophie L.</cite>
+                                    <p class="text-sm text-muted-foreground">Cheffe de projet, 36 ans</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="p-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
+                                <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"Je sortais d'années de yoyo avec mon poids et j'avais une relation très conflictuelle avec la nourriture. J'avais peur de commencer un énième programme. L'approche de Clara a été une révélation. Sa bienveillance est incroyable, il n'y a jamais eu aucun jugement. J'ai appris à écouter ma faim, à manger en conscience et à ne plus diaboliser les aliments. Le plus grand changement n'est pas sur la balance, il est dans ma tête : je suis enfin en paix avec mon assiette. C'est une liberté que je n'aurais jamais cru possible."</blockquote>
+                                <div class="text-right">
+                                    <cite class="text-foreground font-semibold not-italic">Amélie D.</cite>
+                                    <p class="text-sm text-muted-foreground">Graphiste freelance, 32 ans</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="p-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
+                                <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"En tant que jeune maman entrepreneure, je tournais au café et au sucre, et ma charge mentale était explosive. Clara m'a donné des solutions ultra-concrètes et rapides à mettre en place pour mieux structurer mes repas, même avec un agenda de ministre. Ses conseils pour stabiliser ma glycémie ont changé mes journées. Fini le coup de barre de 15h ! J'ai plus de clarté mentale et de patience pour ma famille et mon entreprise. Je la recommande à toutes les femmes qui ont l'impression de courir un marathon en permanence."</blockquote>
+                                <div class="text-right">
+                                    <cite class="text-foreground font-semibold not-italic">Marion P.</cite>
+                                    <p class="text-sm text-muted-foreground">Fondatrice de startup, 39 ans</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- ================= BLOG SECTION ================= -->
+            <!-- ============================================ -->
+            <section id="blog" class="w-full bg-background py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Le Carnet Équilibre</h2>
+                        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Des conseils pratiques et des réflexions bienveillantes pour vous accompagner
+                            dans votre chemin vers une alimentation sereine et une énergie durable.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <!-- Blog Post 1 -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                    <span>15 Mars 2024</span>
+                                    <span>•</span>
+                                    <span>5 min</span>
+                                </div>
+                                <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Nutrition & Énergie</span>
+                                <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Les 3 erreurs du petit-déjeuner qui sabotent votre énergie (et comment les corriger)</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Découvrez pourquoi votre petit-déjeuner pourrait être la cause de vos coups de fatigue matinaux et comment créer un repas qui vous donne de l'énergie durable.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                    <span>Lire l'article</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Post 2 -->
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                    <span>8 Mars 2024</span>
+                                    <span>•</span>
+                                    <span>7 min</span>
+                                </div>
+                                <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Sérénité Digestive</span>
+                                <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Ballonnements : 5 astuces simples à tester dès ce soir pour un ventre plus plat</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Des solutions pratiques et naturelles pour soulager rapidement l'inconfort digestif et retrouver un ventre serein au quotidien.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                    <span>Lire l'article</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Post 3 -->
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                    <span>1er Mars 2024</span>
+                                    <span>•</span>
+                                    <span>10 min</span>
+                                </div>
+                                <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Anti-Charge Mentale</span>
+                                <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Le guide pour préparer des repas sains en moins de 20 minutes quand on est débordée</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Mes meilleures stratégies de batch cooking et d'organisation pour manger sainement même avec un emploi du temps chargé.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                    <span>Lire l'article</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Post 4 -->
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                    <span>25 Février 2024</span>
+                                    <span>•</span>
+                                    <span>8 min</span>
+                                </div>
+                                <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Alimentation Intuitive</span>
+                                <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Pourquoi 'manger ses émotions' n'est pas un problème (et comment le gérer avec bienveillance)</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Une approche douce et sans culpabilité pour comprendre et accompagner votre relation émotionnelle à la nourriture.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                    <span>Lire l'article</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-gray-100 hover:text-accent-foreground h-12 rounded-lg px-8 text-base">
+                            Voir tous les articles
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- ============ LEAD MAGNET SECTION ============= -->
+            <!-- ============================================ -->
+            <section id="lead-magnet" class="w-full bg-gold-light/50 py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm max-w-4xl mx-auto shadow-gold border-gold/20">
+                        <div class="p-12">
+                            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <div class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-white"><path d="M12 2v4M12 20v2M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                        </div>
+                                        <span class="bg-gold text-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                                            Recevez votre Guide
+                                        </span>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-foreground mb-4">
+                                        Offert: 7 Jours de Menus pour une Énergie Décuplée
+                                    </h3>
+                                    <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
+                                        Le plan d'action simple et gourmand pour en finir avec les coups de barre de l'après-midi.
+                                        Recevez des recettes rapides, une liste de courses et des conseils pratiques pour booster
+                                        votre vitalité, sans vous compliquer la vie.
+                                    </p>
+                                    <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                                        <span>PDF de 25 pages • Recettes • Liste de courses incluse</span>
+                                    </div>
+                                </div>
+                                <div class="lg:pl-8">
+                                    <div class="bg-white rounded-xl p-8 shadow-soft">
+                                        <h4 class="text-xl font-bold text-foreground mb-6 text-center">
+                                            Téléchargez votre guide gratuit
+                                        </h4>
+                                        <form class="space-y-4">
+                                            <div>
+                                                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="firstName">Prénom</label>
+                                                <input type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1" id="firstName" placeholder="Votre prénom">
+                                            </div>
+                                            <div>
+                                                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">Adresse email</label>
+                                                <input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1" id="email" placeholder="votre@email.com">
+                                            </div>
+                                            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">
+                                                Je télécharge mon guide
+                                            </button>
+                                            <p class="text-xs text-muted-foreground text-center">
+                                                En téléchargeant ce guide, vous acceptez de recevoir mes conseils nutrition par email.
+                                                Vous pourrez vous désabonner à tout moment.
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- ================= FAQ SECTION ================ -->
+            <!-- ============================================ -->
+            <section id="faq" class="w-full bg-sage-light/30 py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Vos Questions, Mes Réponses</h2>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="space-y-4" id="faq-accordion">
+                            <!-- FAQ Item 1 -->
+                            <div class="bg-white rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 px-6 border-b">
+                                <h3 class="flex">
+                                    <button class="accordion-trigger flex flex-1 items-center justify-between py-4 transition-all hover:underline text-left font-semibold text-foreground hover:text-primary">
+                                        <span>Quelle est la différence entre votre approche et celle d'un(e) diététicien(ne) ?</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                                    </button>
+                                </h3>
+                                <div class="accordion-content overflow-hidden text-sm transition-all" style="max-height: 0px;">
+                                    <div class="text-muted-foreground leading-relaxed pt-2 pb-4">
+                                        C'est une excellente question. Un diététicien est un professionnel de santé expert en nutrition, souvent axé sur la composition des repas et la gestion de pathologies. Mon approche de coach en nutrition fonctionnelle est holistique : nous regardons l'alimentation, mais aussi son interaction avec votre mode de vie global (stress, sommeil, émotions). Mon but est de vous rendre autonome en vous apprenant à comprendre les mécanismes de votre corps, au-delà des calories. Les deux approches sont très complémentaires.
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- FAQ Item 2 -->
+                             <div class="bg-white rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 px-6 border-b">
+                                <h3 class="flex">
+                                    <button class="accordion-trigger flex flex-1 items-center justify-between py-4 transition-all hover:underline text-left font-semibold text-foreground hover:text-primary">
+                                        <span>Est-ce que je vais devoir arrêter de manger les aliments que j'aime ?</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                                    </button>
+                                </h3>
+                                <div class="accordion-content overflow-hidden text-sm transition-all" style="max-height: 0px;">
+                                    <div class="text-muted-foreground leading-relaxed pt-2 pb-4">
+                                        Absolument pas ! Ma philosophie est anti-frustration. Le but n'est pas de supprimer, mais de comprendre et d'équilibrer. Nous trouverons ensemble des alternatives saines et gourmandes, et nous verrons comment intégrer vos plaisirs dans une alimentation qui vous fait du bien. La clé est l'équilibre, pas la privation.
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- FAQ Item 3 -->
+                             <div class="bg-white rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 px-6 border-b">
+                                <h3 class="flex">
+                                    <button class="accordion-trigger flex flex-1 items-center justify-between py-4 transition-all hover:underline text-left font-semibold text-foreground hover:text-primary">
+                                        <span>Je n'ai pas le temps de cuisiner, est-ce que vos accompagnements sont pour moi ?</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                                    </button>
+                                </h3>
+                                <div class="accordion-content overflow-hidden text-sm transition-all" style="max-height: 0px;">
+                                    <div class="text-muted-foreground leading-relaxed pt-2 pb-4">
+                                        Totalement. Mon approche est spécifiquement conçue pour les femmes actives. Tous mes conseils et recettes sont pensés pour être simples, rapides et réalisables même avec un emploi du temps chargé. Je suis une adepte du "batch cooking" et des astuces anti-charge mentale. Nous construirons ensemble une organisation qui s'intègre à votre vie, et non l'inverse.
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- FAQ Item 4 -->
+                             <div class="bg-white rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 px-6 border-b">
+                                <h3 class="flex">
+                                    <button class="accordion-trigger flex flex-1 items-center justify-between py-4 transition-all hover:underline text-left font-semibold text-foreground hover:text-primary">
+                                        <span>Combien de temps faut-il pour voir des résultats ?</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                                    </button>
+                                </h3>
+                                <div class="accordion-content overflow-hidden text-sm transition-all" style="max-height: 0px;">
+                                    <div class="text-muted-foreground leading-relaxed pt-2 pb-4">
+                                        Chaque personne est différente, mais beaucoup de mes clientes ressentent une nette amélioration de leur énergie et de leur confort digestif dès les 2-3 premières semaines. L'objectif n'est pas une transformation spectaculaire et éphémère, mais l'installation progressive et durable de nouvelles habitudes qui vous apporteront des bénéfices sur le long terme.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- =============== BOOKING SECTION ============== -->
+            <!-- ============================================ -->
+            <section id="booking" class="w-full bg-warm-light py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Prête à faire le premier pas ?</h2>
+                        <p class="text-lg text-muted-foreground mb-12">
+                            Réservez votre "Appel Clarté" offert directement dans mon agenda. C'est le moment idéal
+                            pour m'exposer votre situation et voir comment je peux vous aider.
+                        </p>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-warm border-primary/10">
+                            <div class="p-12">
+                                <div class="grid md:grid-cols-2 gap-12 items-center">
+                                    <div class="text-left">
+                                        <h3 class="text-2xl font-bold text-foreground mb-6">Appel Clarté Offert</h3>
+                                        <div class="space-y-4 mb-8">
+                                            <div class="flex items-center gap-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                <span class="text-muted-foreground">30 minutes d'échange confidentiel</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
+                                                <span class="text-muted-foreground">En visioconférence sécurisée</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                                <span class="text-muted-foreground">Sans engagement</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted-foreground leading-relaxed mb-8">
+                                            Cet échange confidentiel en visio est l'occasion de faire connaissance, de parler
+                                            de vos objectifs et de valider si mon approche vous correspond. C'est gratuit,
+                                            sans engagement, et la première étape vers votre nouvelle vitalité.
+                                        </p>
+                                        <div class="space-y-4 text-sm text-muted-foreground">
+                                            <p><strong>Nous aborderons :</strong></p>
+                                            <ul class="space-y-2 ml-4">
+                                                <li>• Votre principal défi ou objectif en ce moment</li>
+                                                <li>• Votre situation actuelle et vos préoccupations</li>
+                                                <li>• Les solutions que je peux vous proposer</li>
+                                                <li>• Toutes vos questions sur mes accompagnements</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gradient-warm rounded-xl p-8">
+                                        <div class="bg-white rounded-lg p-6 shadow-soft">
+                                            <div class="text-center mb-6">
+                                                <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                                </div>
+                                                <h4 class="text-xl font-bold text-foreground">Réservez votre créneau</h4>
+                                            </div>
+                                            <div class="bg-sage-light/30 rounded-lg p-8 text-center mb-6">
+                                                <p class="text-muted-foreground mb-4">Widget Calendly intégré ici</p>
+                                                <p class="text-sm text-muted-foreground">Sélectionnez directement votre créneau dans l'agenda en ligne</p>
+                                            </div>
+                                            <a href="#" class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">
+                                                Accéder à l'agenda
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================ -->
+            <!-- =============== CONTACT SECTION ============== -->
+            <!-- ============================================ -->
+            <section id="contact" class="w-full bg-background py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Contact & Informations</h2>
+                        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Vous avez une question ou préférez un premier contact par écrit ? N'hésitez pas à utiliser
+                            le moyen qui vous convient le mieux. Je me ferai un plaisir de vous répondre sous 48h.
+                        </p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <h3 class="text-2xl font-semibold leading-none tracking-tight">Envoyez-moi un message</h3>
+                                <p class="text-sm text-muted-foreground">Je reviens vers vous très rapidement pour répondre à toutes vos questions.</p>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <form class="space-y-6">
+                                    <div>
+                                        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="name">Nom complet</label>
+                                        <input type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1" id="name" placeholder="Votre nom">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="contactEmail">Email</label>
+                                        <input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1" id="contactEmail" placeholder="votre@email.com">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="message">Message</label>
+                                        <textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-1 min-h-[120px]" id="message" placeholder="Parlez-moi de votre situation, vos objectifs ou vos questions..."></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">
+                                        Envoyer mon message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Contact Info -->
+                        <div class="space-y-8">
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft">
+                                <div class="flex flex-col space-y-1.5 p-6">
+                                    <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Cabinet & Consultations
+                                    </h3>
+                                </div>
+                                <div class="p-6 pt-0 space-y-4">
+                                    <div>
+                                        <p class="font-medium text-foreground">Adresse</p>
+                                        <p class="text-muted-foreground">15 rue de la Paix, 75002 Paris</p>
+                                        <p class="text-sm text-muted-foreground">(Consultations sur RDV & en Visio)</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        <span class="text-muted-foreground">Du Lundi au Vendredi, de 9h à 19h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft">
+                                <div class="p-6 pt-0 space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5"><rect width="16" height="16" x="4" y="3" rx="2"></rect><path d="M4 11h16"></path><path d="M12 3v8"></path><path d="m8 19-2 3"></path><path d="m18 22-2-3"></path><path d="M8 15h.01"></path><path d="M16 15h.01"></path></svg>
+                                        <div>
+                                            <p class="font-medium text-foreground">Transports</p>
+                                            <p class="text-muted-foreground">Métro Opéra (Lignes 3, 7, 8) à 2 minutes à pied</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                                        <div>
+                                            <p class="font-medium text-foreground">Parking</p>
+                                            <p class="text-muted-foreground">Parking public Indigo "Place Vendôme" à 100m</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg>
+                                        <div>
+                                            <p class="font-medium text-foreground">Accessibilité</p>
+                                            <p class="text-muted-foreground">Le bâtiment est équipé d'un ascenseur</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-sage-light/30 rounded-lg p-4">
+                                        <p class="text-sm text-muted-foreground">
+                                            <strong>Précisions d'arrivée :</strong> L'entrée se trouve à côté de la boutique "XYZ".
+                                            Interphone "Dubois - Équilibre Vital", 3ème étage, porte de droite.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ============================================ -->
+        <!-- =================== FOOTER =================== -->
+        <!-- ============================================ -->
+        <footer class="bg-sage-dark text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="py-16">
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <!-- Footer Column 1: Brand -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Équilibre Vital</h3>
+                            <p class="text-sage-light leading-relaxed mb-6">Votre chemin vers une énergie durable et une alimentation sereine.</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-md text-sage-light hover:text-white hover:bg-white/10 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                                </a>
+                                <a href="#" class="inline-flex items-center justify-center h-10 w-10 rounded-md text-sage-light hover:text-white hover:bg-white/10 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Footer Column 2: Navigation -->
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-6">Navigation</h4>
+                            <ul class="space-y-3">
+                                <li><a href="#about" class="text-sage-light hover:text-white transition-colors">À Propos</a></li>
+                                <li><a href="#services" class="text-sage-light hover:text-white transition-colors">Accompagnements</a></li>
+                                <li><a href="#testimonials" class="text-sage-light hover:text-white transition-colors">Témoignages</a></li>
+                                <li><a href="#blog" class="text-sage-light hover:text-white transition-colors">Le Blog</a></li>
+                                <li><a href="#contact" class="text-sage-light hover:text-white transition-colors">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Column 3: Contact -->
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-6">Contact</h4>
+                            <div class="space-y-4 text-sage-light">
+                                <div class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mt-0.5 flex-shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <span>15 rue de la Paix, 75002 Paris</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                    <span>clara@equilibre-vital.fr</span>
+                                </div>
+                                <a href="#booking" class="mt-4 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-warm text-foreground hover:bg-warm-dark shadow-soft hover:shadow-gold h-9 rounded-md px-3">
+                                    Prendre rendez-vous
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-sage-dark/30 py-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sage-light">
+                        <p>© 2025 Équilibre Vital - Tous droits réservés.</p>
+                        <div class="flex gap-6">
+                            <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+                            <a href="#" class="hover:text-white transition-colors">Politique de Confidentialité</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation bar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-soft');
+                } else {
+                    navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-soft');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu on link click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // FAQ Accordion
+            const accordionItems = document.querySelectorAll('.accordion-trigger');
+            accordionItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const content = item.parentElement.nextElementSibling;
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                    // Close all other items
+                    document.querySelectorAll('.accordion-content').forEach(el => {
+                        el.style.maxHeight = '0px';
+                        el.parentElement.querySelector('.accordion-trigger svg').style.transform = 'rotate(0deg)';
+                    });
+
+                    // Open the clicked item
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        item.querySelector('svg').style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
