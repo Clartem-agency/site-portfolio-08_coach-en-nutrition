@@ -13,6 +13,9 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AJOUT: CDN pour ScrollReveal.js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +36,10 @@
         }
         .bg-gradient-warm {
              background-image: linear-gradient(to right, #f6ee3e3, #ebd496);
+        }
+        /* AJOUT: Cache les éléments pour ScrollReveal avant qu'ils n'apparaissent */
+        .reveal-up, .reveal-left, .reveal-right {
+            visibility: hidden;
         }
     </style>
     <script>
@@ -159,7 +166,7 @@
             <section id="about" class="w-full bg-warm-light py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <div class="order-2 lg:order-1">
+                        <div class="order-2 lg:order-1 reveal-left">
                             <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-6">Mon histoire : de l'épuisement à l'équilibre</h2>
                             <div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
                                 <p>Pendant 10 ans, j'ai été cette femme que j'accompagne aujourd'hui. Avocate d'affaires à Paris, je vivais à 200 à l'heure, persuadée que la performance était la seule mesure du succès. Mon corps, lui, tirait la sonnette d'alarme : fatigue chronique, brouillard mental, et des douleurs digestives qui devenaient mon quotidien. J'ai tout essayé : les régimes à la mode, les restrictions drastiques, les "superaliments"... pour finalement me sentir encore plus épuisée et coupable de ne pas "y arriver".</p>
@@ -167,9 +174,9 @@
                                 <p>Aujourd'hui, certifiée en nutrition et micro-nutrition, ma mission est de vous faire gagner ce temps précieux. Mon approche n'est pas un énième régime, mais une éducation bienveillante pour vous rendre autonome. Je vous transmets les clés pour comprendre les signaux de votre corps et construire une alimentation simple, gourmande et adaptée à votre vie active. Mon engagement est de vous offrir un espace d'écoute sans jugement, pour qu'ensemble, nous transformions votre alimentation en votre première source de vitalité.</p>
                             </div>
                         </div>
-                        <div class="order-1 lg:order-2">
+                        <div class="order-1 lg:order-2 reveal-right">
                             <div class="relative">
-                                <img src="images/coach-nutrition-portrait.webp" alt="Clara Dubois, coach en nutrition, souriante dans un cadre professionnel et chaleureux" class="w-full rounded-2xl shadow-warm">
+                                <img src="images/coach-nutrition-portrait.webp" alt="Clara Dubois, coach en nutrition, souriante dans un cadre professionnel et chaleureux" class="w-full rounded-2xl shadow-warm" loading="lazy" decoding="async">
                                 <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-primary rounded-full opacity-20"></div>
                                 <div class="absolute -top-4 -left-4 w-16 h-16 bg-gold rounded-full opacity-30"></div>
                             </div>
@@ -178,18 +185,18 @@
                 </div>
             </section>
 
-                        <!-- ============================================ -->
+            <!-- ============================================ -->
             <!-- ============== SERVICES SECTION ============== -->
             <!-- ============================================ -->
             <section id="services" class="w-full bg-background py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Des accompagnements pour nourrir votre vitalité</h2>
                     </div>
                     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         
                         <!-- Service Card 1 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full reveal-up">
                             <div class="p-6">
                                 <div class="text-center pb-4">
                                     <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Séance "Bilan & Impulsion"</h3>
@@ -228,7 +235,7 @@
                         </div>
 
                         <!-- Service Card 2 (Modifiée) -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full reveal-up">
                             <div class="p-6">
                                 <div class="text-center pb-4">
                                     <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Parcours "Équilibre Vital"</h3>
@@ -271,7 +278,7 @@
                         </div>
 
                         <!-- Service Card 3 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full reveal-up">
                             <div class="p-6">
                                 <div class="text-center pb-4">
                                     <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Focus "Sérénité Digestive"</h3>
@@ -312,12 +319,12 @@
                 </div>
             </section>
             
-                        <!-- ============================================ -->
+            <!-- ============================================ -->
             <!-- ============== APPROACH SECTION ============== -->
             <!-- ============================================ -->
             <section id="approach" class="w-full bg-sage-light/30 py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Mon approche, pas à pas</h2>
                         <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
                             Chaque accompagnement est unique, car vous êtes unique. Cependant, pour que vous vous sentiez
@@ -327,7 +334,7 @@
                     </div>
                     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
                         <!-- Carte 1: Appel Clarté -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-6">
                                 <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-to-r from-sage-dark to-primary flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -339,7 +346,7 @@
                             </div>
                         </div>
                         <!-- Carte 2: Le Parcours -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-6">
                                 <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-to-r from-sage-dark to-primary flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
@@ -351,7 +358,7 @@
                             </div>
                         </div>
                         <!-- Carte 3: L'Autonomie -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-6">
                                 <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-to-r from-sage-dark to-primary flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-white"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
@@ -371,13 +378,13 @@
             <!-- ============================================ -->
             <section id="testimonials" class="w-full bg-warm-light py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Leurs Histoires, Leurs Transformations</h2>
                     </div>
                     <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                         
                         <!-- Testimonial 1 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
                                 <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"Avant de rencontrer Clara, j'étais épuisée et ballonnée en permanence. Je pensais que c'était une fatalité liée à mon travail stressant. Dès la première séance, son écoute et son analyse fine m'ont permis de comprendre les liens entre mon stress, mon sommeil et ma digestion. Elle ne m'a pas imposé un régime, elle m'a appris à manger différemment, avec plaisir et simplicité. Aujourd'hui, mon énergie est revenue, mes après-midis ne sont plus gâchés par l'inconfort digestif. C'est plus qu'un coaching, c'est une nouvelle hygiène de vie que j'ai adoptée sans effort."</blockquote>
@@ -389,7 +396,7 @@
                         </div>
                         
                         <!-- Testimonial 2 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
                                 <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"Je sortais d'années de yoyo avec mon poids et j'avais une relation très conflictuelle avec la nourriture. J'avais peur de commencer un énième programme. L'approche de Clara a été une révélation. Sa bienveillance est incroyable, il n'y a jamais eu aucun jugement. J'ai appris à écouter ma faim, à manger en conscience et à ne plus diaboliser les aliments. Le plus grand changement n'est pas sur la balance, il est dans ma tête : je suis enfin en paix avec mon assiette. C'est une liberté que je n'aurais jamais cru possible."</blockquote>
@@ -401,7 +408,7 @@
                         </div>
 
                         <!-- Testimonial 3 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 reveal-up">
                             <div class="p-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path><path d="M17 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .744-2 2v6c0 7 4 8 8 8Z"></path></svg>
                                 <blockquote class="text-lg text-muted-foreground leading-relaxed mb-6 italic">"En tant que jeune maman entrepreneure, je tournais au café et au sucre, et ma charge mentale était explosive. Clara m'a donné des solutions ultra-concrètes et rapides à mettre en place pour mieux structurer mes repas, même avec un agenda de ministre. Ses conseils pour stabiliser ma glycémie ont changé mes journées. Fini le coup de barre de 15h ! J'ai plus de clarté mentale et de patience pour ma famille et mon entreprise. Je la recommande à toutes les femmes qui ont l'impression de courir un marathon en permanence."</blockquote>
@@ -421,7 +428,7 @@
             <!-- ============================================ -->
             <section id="blog" class="w-full bg-background py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Le Carnet Équilibre</h2>
                         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
                             Des conseils pratiques et des réflexions bienveillantes pour vous accompagner
@@ -430,8 +437,8 @@
                     </div>
                     <div class="grid md:grid-cols-2 gap-8 mb-12">
                         <!-- Blog Post 1 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
-                            <img src="images/blog-petit-dejeuner-energie.webp" alt="Un bol de granola sain et équilibré pour le petit-déjeuner" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col reveal-up">
+                            <img src="images/blog-petit-dejeuner-energie.webp" alt="Un bol de granola sain et équilibré pour le petit-déjeuner" class="w-full h-48 object-cover rounded-t-lg" loading="lazy" decoding="async">
                             <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
@@ -449,8 +456,8 @@
                             </div>
                         </div>
                         <!-- Blog Post 2 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
-                            <img src="images/blog-ballonnements-digestion.webp" alt="Femme se tenant le ventre, apaisée et sereine" class="w-full h-48 object-cover rounded-t-lg">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col reveal-up">
+                            <img src="images/blog-ballonnements-digestion.webp" alt="Femme se tenant le ventre, apaisée et sereine" class="w-full h-48 object-cover rounded-t-lg" loading="lazy" decoding="async">
                             <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
@@ -468,8 +475,8 @@
                             </div>
                         </div>
                         <!-- Blog Post 3 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
-                            <img src="images/blog-repas-rapides-sains.webp" alt="Préparation de repas sains et rapides dans des boîtes de conservation" class="w-full h-48 object-cover rounded-t-lg">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col reveal-up">
+                            <img src="images/blog-repas-rapides-sains.webp" alt="Préparation de repas sains et rapides dans des boîtes de conservation" class="w-full h-48 object-cover rounded-t-lg" loading="lazy" decoding="async">
                             <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
@@ -487,8 +494,8 @@
                             </div>
                         </div>
                         <!-- Blog Post 4 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
-                            <img src="images/blog-alimentation-emotionnelle.webp" alt="Personne mangeant un carré de chocolat avec pleine conscience et sérénité" class="w-full h-48 object-cover rounded-t-lg">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col reveal-up">
+                            <img src="images/blog-alimentation-emotionnelle.webp" alt="Personne mangeant un carré de chocolat avec pleine conscience et sérénité" class="w-full h-48 object-cover rounded-t-lg" loading="lazy" decoding="async">
                             <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
@@ -506,7 +513,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center reveal-up">
                         <a href="#" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-gray-100 hover:text-accent-foreground h-12 rounded-lg px-8 text-base">
                             Voir tous les articles
                         </a>
@@ -519,7 +526,7 @@
             <!-- ============================================ -->
             <section id="lead-magnet" class="w-full bg-gold-light/50 py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm max-w-4xl mx-auto shadow-gold border-gold/20">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm max-w-4xl mx-auto shadow-gold border-gold/20 reveal-up">
                         <div class="p-12">
                             <div class="grid lg:grid-cols-2 gap-12 items-center">
                                 <div>
@@ -579,10 +586,10 @@
             <!-- ============================================ -->
             <section id="faq" class="w-full bg-sage-light/30 py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Vos Questions, Mes Réponses</h2>
                     </div>
-                    <div class="max-w-3xl mx-auto">
+                    <div class="max-w-3xl mx-auto reveal-up">
                         <div class="space-y-4" id="faq-accordion">
                             <!-- FAQ Item 1 -->
                             <div class="bg-white rounded-lg shadow-soft hover:shadow-warm transition-all duration-300 px-6 border-b">
@@ -646,106 +653,105 @@
             </section>
             
             <!-- ============================================ -->
-<!-- =============== BOOKING SECTION ============== -->
-<!-- ============================================ -->
-<section id="booking" class="w-full bg-warm-light py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Prête à faire le premier pas vers votre vitalité ?</h2>
-            <p class="text-lg text-muted-foreground mb-12">
-                Je vous offre un moment d'échange pour faire le point. Réservez votre "Appel Clarté" directement dans mon agenda.
-                C'est notre premier pas, sans pression, pour voir si le courant passe et si je suis la bonne personne pour vous guider.
-            </p>
-            
-            <!-- Calendly-style Widget -->
-            <div class="rounded-2xl border bg-card text-card-foreground shadow-sm shadow-warm border-primary/10 overflow-hidden">
-                <div class="grid lg:grid-cols-2">
-                    
-                    <!-- Left Panel: Information -->
-                    <div class="p-8 md:p-12 text-left border-r border-gray-200">
-                        <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md">
-                            <!-- Placeholder pour la photo de portrait -->
-                            <img src="images/coach-nutrition-portrait.webp" alt="Portrait de Clara Dubois, coach en nutrition" class="w-full h-full object-cover">
-                        </div>
-                        <p class="text-muted-foreground">Clara Dubois</p>
-                        <h3 class="text-2xl font-bold text-foreground mb-4">Appel Clarté Offert</h3>
-                        
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                <span class="text-muted-foreground">30 minutes</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
-                                <span class="text-muted-foreground">En visioconférence (Google Meet)</span>
-                            </div>
-                        </div>
-                        <p class="text-muted-foreground leading-relaxed">
-                            Cet échange confidentiel est l'occasion de faire connaissance, de parler de vos objectifs et de valider si mon approche vous correspond. C'est gratuit, sans engagement, et la première étape vers votre nouvelle énergie.
+            <!-- =============== BOOKING SECTION ============== -->
+            <!-- ============================================ -->
+            <section id="booking" class="w-full bg-warm-light py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center reveal-up">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Prête à faire le premier pas vers votre vitalité ?</h2>
+                        <p class="text-lg text-muted-foreground mb-12">
+                            Je vous offre un moment d'échange pour faire le point. Réservez votre "Appel Clarté" directement dans mon agenda.
+                            C'est notre premier pas, sans pression, pour voir si le courant passe et si je suis la bonne personne pour vous guider.
                         </p>
-                    </div>
-
-                    <!-- Right Panel: Calendar Simulation -->
-                    <div class="p-6 md:p-8 relative">
-                        <!-- Badge Calendly -->
-                        <a href="#" class="absolute top-4 right-4 bg-gray-200 text-gray-600 text-xs font-semibold px-2 py-1 rounded-md hover:bg-gray-300 transition-colors">Calendly</a>
-
-                        <h4 class="text-lg font-bold text-foreground text-center mb-4">Sélectionnez une date et une heure</h4>
                         
-                        <!-- Calendar Interface -->
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <button class="p-2 rounded-full hover:bg-gray-100">
-                                    <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                </button>
-                                <div class="font-semibold text-foreground">Avril 2024</div>
-                                <button class="p-2 rounded-full hover:bg-gray-100">
-                                    <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </button>
-                            </div>
-                            <div class="grid grid-cols-7 text-center text-xs text-muted-foreground mb-2">
-                                <span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span>
-                            </div>
-                            <div class="grid grid-cols-7 text-center text-sm">
-                                <!-- Dates (exemple visuel) -->
-                                <div class="p-2 text-gray-300">25</div><div class="p-2 text-gray-300">26</div><div class="p-2 text-gray-300">27</div><div class="p-2 text-gray-300">28</div><div class="p-2 text-gray-300">29</div><div class="p-2 text-gray-300">30</div><div class="p-2 text-gray-300">31</div>
-                                <div class="p-2 text-gray-400 line-through">1</div><div class="p-2 text-gray-400 line-through">2</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">3</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">4</div><div class="p-2 text-gray-400 line-through">5</div><div class="p-2 text-gray-400">6</div><div class="p-2 text-gray-400">7</div>
-                                <div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">8</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">9</div><div class="p-2 text-gray-400 line-through">10</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">11</div><div class="p-2 bg-primary text-white font-semibold rounded-full cursor-pointer">12</div><div class="p-2 text-gray-400">13</div><div class="p-2 text-gray-400">14</div>
-                                <div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">15</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">16</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">17</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">18</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">19</div><div class="p-2 text-gray-400">20</div><div class="p-2 text-gray-400">21</div>
+                        <!-- Calendly-style Widget -->
+                        <div class="rounded-2xl border bg-card text-card-foreground shadow-sm shadow-warm border-primary/10 overflow-hidden">
+                            <div class="grid lg:grid-cols-2">
+                                
+                                <!-- Left Panel: Information -->
+                                <div class="p-8 md:p-12 text-left border-r border-gray-200">
+                                    <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md">
+                                        <img src="images/coach-nutrition-portrait.webp" alt="Portrait de Clara Dubois, coach en nutrition" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                    </div>
+                                    <p class="text-muted-foreground">Clara Dubois</p>
+                                    <h3 class="text-2xl font-bold text-foreground mb-4">Appel Clarté Offert</h3>
+                                    
+                                    <div class="space-y-4 mb-8">
+                                        <div class="flex items-center gap-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            <span class="text-muted-foreground">30 minutes</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
+                                            <span class="text-muted-foreground">En visioconférence (Google Meet)</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted-foreground leading-relaxed">
+                                        Cet échange confidentiel est l'occasion de faire connaissance, de parler de vos objectifs et de valider si mon approche vous correspond. C'est gratuit, sans engagement, et la première étape vers votre nouvelle énergie.
+                                    </p>
+                                </div>
+
+                                <!-- Right Panel: Calendar Simulation -->
+                                <div class="p-6 md:p-8 relative">
+                                    <!-- Badge Calendly -->
+                                    <a href="#" class="absolute top-4 right-4 bg-gray-200 text-gray-600 text-xs font-semibold px-2 py-1 rounded-md hover:bg-gray-300 transition-colors">Calendly</a>
+
+                                    <h4 class="text-lg font-bold text-foreground text-center mb-4">Sélectionnez une date et une heure</h4>
+                                    
+                                    <!-- Calendar Interface -->
+                                    <div>
+                                        <div class="flex items-center justify-between mb-4">
+                                            <button class="p-2 rounded-full hover:bg-gray-100">
+                                                <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                            </button>
+                                            <div class="font-semibold text-foreground">Avril 2024</div>
+                                            <button class="p-2 rounded-full hover:bg-gray-100">
+                                                <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-7 text-center text-xs text-muted-foreground mb-2">
+                                            <span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span>
+                                        </div>
+                                        <div class="grid grid-cols-7 text-center text-sm">
+                                            <!-- Dates (exemple visuel) -->
+                                            <div class="p-2 text-gray-300">25</div><div class="p-2 text-gray-300">26</div><div class="p-2 text-gray-300">27</div><div class="p-2 text-gray-300">28</div><div class="p-2 text-gray-300">29</div><div class="p-2 text-gray-300">30</div><div class="p-2 text-gray-300">31</div>
+                                            <div class="p-2 text-gray-400 line-through">1</div><div class="p-2 text-gray-400 line-through">2</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">3</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">4</div><div class="p-2 text-gray-400 line-through">5</div><div class="p-2 text-gray-400">6</div><div class="p-2 text-gray-400">7</div>
+                                            <div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">8</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">9</div><div class="p-2 text-gray-400 line-through">10</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">11</div><div class="p-2 bg-primary text-white font-semibold rounded-full cursor-pointer">12</div><div class="p-2 text-gray-400">13</div><div class="p-2 text-gray-400">14</div>
+                                            <div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">15</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">16</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">17</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">18</div><div class="p-2 text-primary font-semibold cursor-pointer hover:bg-primary/10 rounded-full">19</div><div class="p-2 text-gray-400">20</div><div class="p-2 text-gray-400">21</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Time Slots (exemple visuel) -->
+                                    <div class="mt-6 text-left" id="time-slots">
+                                       <p class="font-semibold text-foreground mb-3">Vendredi 12 Avril</p>
+                                       <div class="grid grid-cols-3 gap-2">
+                                           <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">09:30</button>
+                                           <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">10:00</button>
+                                           <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">11:30</button>
+                                           <button class="w-full text-center py-2 border border-primary bg-primary text-white rounded-md">14:00</button>
+                                           <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">14:30</button>
+                                       </div>
+                                       <div class="mt-4 flex gap-4">
+                                           <div class="flex-1 text-center py-2 font-semibold text-foreground">14:00 - 14:30</div>
+                                           <button class="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-10 rounded-md px-3">
+                                               Confirmer
+                                           </button>
+                                       </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        
-                        <!-- Time Slots (exemple visuel) -->
-                        <div class="mt-6 text-left" id="time-slots">
-                           <p class="font-semibold text-foreground mb-3">Vendredi 12 Avril</p>
-                           <div class="grid grid-cols-3 gap-2">
-                               <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">09:30</button>
-                               <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">10:00</button>
-                               <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">11:30</button>
-                               <button class="w-full text-center py-2 border border-primary bg-primary text-white rounded-md">14:00</button>
-                               <button class="w-full text-center py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors">14:30</button>
-                           </div>
-                           <div class="mt-4 flex gap-4">
-                               <div class="flex-1 text-center py-2 font-semibold text-foreground">14:00 - 14:30</div>
-                               <button class="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-10 rounded-md px-3">
-                                   Confirmer
-                               </button>
-                           </div>
-                        </div>
                     </div>
-
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
             
             <!-- ============================================ -->
             <!-- =============== CONTACT SECTION ============== -->
             <!-- ============================================ -->
             <section id="contact" class="w-full bg-background py-20">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal-up">
                         <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Contact & Informations</h2>
                         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
                             Vous avez une question ou préférez un premier contact par écrit ? N'hésitez pas à utiliser
@@ -754,7 +760,7 @@
                     </div>
                     <div class="grid lg:grid-cols-2 gap-12">
                         <!-- Contact Form -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 reveal-left">
                             <div class="flex flex-col space-y-1.5 p-6">
                                 <h3 class="text-2xl font-semibold leading-none tracking-tight">Envoyez-moi un message</h3>
                                 <p class="text-sm text-muted-foreground">Je reviens vers vous très rapidement pour répondre à toutes vos questions.</p>
@@ -780,7 +786,7 @@
                             </div>
                         </div>
                         <!-- Contact Info -->
-                        <div class="space-y-8">
+                        <div class="space-y-8 reveal-right">
                             <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft">
                                 <div class="flex flex-col space-y-1.5 p-6">
                                     <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
@@ -947,6 +953,36 @@
                     }
                 });
             });
+
+            // ==================================================
+            // AJOUT: Logique pour le Scroll Reveal (Desktop uniquement)
+            // ==================================================
+            if (window.innerWidth >= 1024) { // lg breakpoint in Tailwind
+                const sr = ScrollReveal({
+                    origin: 'bottom',
+                    distance: '60px',
+                    duration: 1000,
+                    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                    reset: false // Les animations ne se répètent pas
+                });
+
+                // Animation générale "vers le haut"
+                sr.reveal('.reveal-up', {
+                    interval: 100 // Délai entre chaque élément du même groupe
+                });
+
+                // Animation "vers la gauche"
+                sr.reveal('.reveal-left', {
+                    origin: 'left',
+                    distance: '80px'
+                });
+
+                // Animation "vers la droite"
+                sr.reveal('.reveal-right', {
+                    origin: 'right',
+                    distance: '80px'
+                });
+            }
         });
     </script>
 </body>
