@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clara Dubois - Coach Nutrition | Équilibre Vital</title>
+
+    <!-- Balises pour le partage sur les réseaux sociaux -->
+    <meta property="og:title" content="Clara Dubois - Coach Nutrition | Équilibre Vital">
+    <meta property="og:description" content="Coaching en nutrition fonctionnelle pour les femmes actives qui veulent se réconcilier avec leur assiette et leur corps.">
+    <meta property="og:image" content="images/apercu-partage-social.webp">
+    <meta property="og:url" content="https://www.votre-site.fr"> <!-- Pensez à remplacer par votre URL réelle -->
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,7 +131,7 @@
             <!-- ================ HERO SECTION ================ -->
             <!-- ============================================ -->
             <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1540420773420-2850a26b685a?q=80&w=2532&auto=format&fit=crop');"></div>
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/hero-background.webp');"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-sage-dark/80 via-sage/60 to-transparent"></div>
 
                 <div class="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,7 +169,7 @@
                         </div>
                         <div class="order-1 lg:order-2">
                             <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop" alt="Clara Dubois, coach en nutrition" class="w-full rounded-2xl shadow-warm">
+                                <img src="images/coach-nutrition-portrait.webp" alt="Clara Dubois, coach en nutrition, souriante dans un cadre professionnel et chaleureux" class="w-full rounded-2xl shadow-warm">
                                 <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-primary rounded-full opacity-20"></div>
                                 <div class="absolute -top-4 -left-4 w-16 h-16 bg-gold rounded-full opacity-30"></div>
                             </div>
@@ -181,119 +189,125 @@
                     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         
                         <!-- Service Card 1 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 p-6 flex flex-col h-full">
-                            <div class="text-center pb-4">
-                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Séance "Bilan & Impulsion"</h3>
-                                <div class="mb-4">
-                                    <span class="text-2xl font-bold text-primary">150€</span>
-                                    <p class="text-sm text-muted-foreground">Séance de 90 minutes</p>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full">
+                            <div class="p-6">
+                                <div class="text-center pb-4">
+                                    <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Séance "Bilan & Impulsion"</h3>
+                                    <div class="mb-4">
+                                        <span class="text-2xl font-bold text-primary">150€</span>
+                                        <p class="text-sm text-muted-foreground">Séance de 90 minutes</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="space-y-6 flex-grow flex flex-col">
-                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">Une séance unique et intensive de 90 minutes pour faire un état des lieux complet de votre situation. Idéale si vous vous sentez perdue et avez besoin d'une feuille de route claire et de premières actions concrètes pour retrouver votre bien-être.</p>
-                                <ul class="space-y-3 text-left">
-                                    <li class="flex items-start gap-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Analyse approfondie de votre questionnaire de vitalité</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Bilan de vos habitudes alimentaires et de votre mode de vie</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Identification de vos blocages et de vos besoins réels</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Définition de vos 3 premiers objectifs prioritaires</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Remise d'un plan d'action personnalisé après la séance</span>
-                                    </li>
-                                </ul>
-                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-sage-light text-sage-dark hover:bg-sage hover:text-white shadow-soft h-12 rounded-lg px-8 text-base">Réserver ma séance Bilan</a>
+                                <div class="space-y-6 flex-grow flex flex-col">
+                                    <p class="text-muted-foreground text-base leading-relaxed flex-grow">Une séance unique et intensive de 90 minutes pour faire un état des lieux complet de votre situation. Idéale si vous vous sentez perdue et avez besoin d'une feuille de route claire et de premières actions concrètes pour retrouver votre bien-être.</p>
+                                    <ul class="space-y-3 text-left">
+                                        <li class="flex items-start gap-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Analyse approfondie de votre questionnaire de vitalité</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Bilan de vos habitudes alimentaires et de votre mode de vie</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Identification de vos blocages et de vos besoins réels</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Définition de vos 3 premiers objectifs prioritaires</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Remise d'un plan d'action personnalisé après la séance</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-sage-light text-sage-dark hover:bg-sage hover:text-white shadow-soft h-12 rounded-lg px-8 text-base">Réserver ma séance Bilan</a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Service Card 2 (Popular) -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative ring-2 ring-primary shadow-warm scale-105 transition-all duration-300 p-6 flex flex-col h-full">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative ring-2 ring-primary shadow-warm scale-105 transition-all duration-300 flex flex-col h-full">
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                                 <span class="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-semibold">Le plus populaire</span>
                             </div>
-                            <div class="text-center pb-4 pt-4">
-                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Parcours "Équilibre Vital"</h3>
-                                <div class="mb-4">
-                                    <span class="text-2xl font-bold text-primary">Forfait 3 mois : 750€</span>
-                                    <p class="text-sm text-muted-foreground">(ou 3 x 250€)</p>
+                            <div class="p-6">
+                                <div class="text-center pb-4 pt-4">
+                                    <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Parcours "Équilibre Vital"</h3>
+                                    <div class="mb-4">
+                                        <span class="text-2xl font-bold text-primary">Forfait 3 mois : 750€</span>
+                                        <p class="text-sm text-muted-foreground">(ou 3 x 250€)</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="space-y-6 flex-grow flex flex-col">
-                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">L'accompagnement signature sur 3 mois pour une transformation durable. Nous allons au-delà de l'alimentation pour apaiser votre système digestif, stabiliser votre énergie et vous réconcilier durablement avec votre corps. C'est le chemin pour devenir l'experte de votre propre bien-être.</p>
-                                <ul class="space-y-3 text-left">
-                                   <li class="flex items-start gap-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">1 séance "Bilan & Impulsion" de 90 minutes</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">5 séances de suivi de 60 minutes (toutes les 2 semaines)</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Protocoles personnalisés en nutrition et micro-nutrition</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Outils pratiques pour la gestion du stress et du sommeil</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Support par email entre les séances pour garder le cap</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Un carnet de recettes et de conseils sur-mesure</span>
-                                    </li>
-                                </ul>
-                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">Commencer ma transformation</a>
+                                <div class="space-y-6 flex-grow flex flex-col">
+                                    <p class="text-muted-foreground text-base leading-relaxed flex-grow">L'accompagnement signature sur 3 mois pour une transformation durable. Nous allons au-delà de l'alimentation pour apaiser votre système digestif, stabiliser votre énergie et vous réconcilier durablement avec votre corps. C'est le chemin pour devenir l'experte de votre propre bien-être.</p>
+                                    <ul class="space-y-3 text-left">
+                                       <li class="flex items-start gap-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">1 séance "Bilan & Impulsion" de 90 minutes</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">5 séances de suivi de 60 minutes (toutes les 2 semaines)</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Protocoles personnalisés en nutrition et micro-nutrition</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Outils pratiques pour la gestion du stress et du sommeil</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Support par email entre les séances pour garder le cap</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Un carnet de recettes et de conseils sur-mesure</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-sage-dark to-primary text-white hover:from-sage-dark hover:to-primary/90 shadow-warm hover:shadow-xl transform hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base">Commencer ma transformation</a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Service Card 3 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 p-6 flex flex-col h-full">
-                            <div class="text-center pb-4">
-                                <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Focus "Sérénité Digestive"</h3>
-                                <div class="mb-4">
-                                    <span class="text-2xl font-bold text-primary">Forfait 6 semaines : 490€</span>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col h-full">
+                            <div class="p-6">
+                                <div class="text-center pb-4">
+                                    <h3 class="tracking-tight text-xl font-bold text-foreground mb-2">Focus "Sérénité Digestive"</h3>
+                                    <div class="mb-4">
+                                        <span class="text-2xl font-bold text-primary">Forfait 6 semaines : 490€</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="space-y-6 flex-grow flex flex-col">
-                                <p class="text-muted-foreground text-base leading-relaxed flex-grow">Un programme ciblé de 6 semaines pour comprendre et apaiser durablement vos troubles digestifs (ballonnements, inconforts, transit...). Nous identifions les causes profondes pour retrouver un ventre serein et une digestion confortable au quotidien.</p>
-                                <ul class="space-y-3 text-left">
-                                    <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">1 séance de bilan digestif approfondi (75 min)</span>
-                                    </li>
-                                     <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">3 séances de suivi ciblées (45 min)</span>
-                                    </li>
-                                     <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Protocole alimentaire spécifique (type Fodmaps si nécessaire)</span>
-                                    </li>
-                                     <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Conseils en micro-nutrition pour soutenir votre flore intestinale</span>
-                                    </li>
-                                     <li class="flex items-start gap-3">
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                        <span class="text-sm text-muted-foreground">Fiches pratiques pour gérer les situations du quotidien (repas extérieur, etc.)</span>
-                                    </li>
-                                </ul>
-                                <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-warm text-foreground hover:bg-warm-dark shadow-soft hover:shadow-gold h-12 rounded-lg px-8 text-base">Apaiser ma digestion</a>
+                                <div class="space-y-6 flex-grow flex flex-col">
+                                    <p class="text-muted-foreground text-base leading-relaxed flex-grow">Un programme ciblé de 6 semaines pour comprendre et apaiser durablement vos troubles digestifs (ballonnements, inconforts, transit...). Nous identifions les causes profondes pour retrouver un ventre serein et une digestion confortable au quotidien.</p>
+                                    <ul class="space-y-3 text-left">
+                                        <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">1 séance de bilan digestif approfondi (75 min)</span>
+                                        </li>
+                                         <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">3 séances de suivi ciblées (45 min)</span>
+                                        </li>
+                                         <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Protocole alimentaire spécifique (type Fodmaps si nécessaire)</span>
+                                        </li>
+                                         <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Conseils en micro-nutrition pour soutenir votre flore intestinale</span>
+                                        </li>
+                                         <li class="flex items-start gap-3">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                                            <span class="text-sm text-muted-foreground">Fiches pratiques pour gérer les situations du quotidien (repas extérieur, etc.)</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#booking" class="mt-auto w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-warm text-foreground hover:bg-warm-dark shadow-soft hover:shadow-gold h-12 rounded-lg px-8 text-base">Apaiser ma digestion</a>
+                                </div>
                             </div>
                         </div>
 
@@ -416,8 +430,9 @@
                     </div>
                     <div class="grid md:grid-cols-2 gap-8 mb-12">
                         <!-- Blog Post 1 -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
-                            <div class="flex flex-col space-y-1.5 p-6">
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
+                            <img src="images/blog-petit-dejeuner-energie.webp" alt="Un bol de granola sain et équilibré pour le petit-déjeuner" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
                                     <span>15 Mars 2024</span>
@@ -426,18 +441,17 @@
                                 </div>
                                 <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Nutrition & Énergie</span>
                                 <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Les 3 erreurs du petit-déjeuner qui sabotent votre énergie (et comment les corriger)</h3>
-                            </div>
-                            <div class="p-6 pt-0">
-                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Découvrez pourquoi votre petit-déjeuner pourrait être la cause de vos coups de fatigue matinaux et comment créer un repas qui vous donne de l'énergie durable.</p>
-                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                <p class="text-muted-foreground text-base leading-relaxed my-4 text-left flex-grow">Découvrez pourquoi votre petit-déjeuner pourrait être la cause de vos coups de fatigue matinaux et comment créer un repas qui vous donne de l'énergie durable.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all mt-auto">
                                     <span>Lire l'article</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                 </div>
                             </div>
                         </div>
                         <!-- Blog Post 2 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
-                            <div class="flex flex-col space-y-1.5 p-6">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
+                            <img src="images/blog-ballonnements-digestion.webp" alt="Femme se tenant le ventre, apaisée et sereine" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
                                     <span>8 Mars 2024</span>
@@ -446,18 +460,17 @@
                                 </div>
                                 <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Sérénité Digestive</span>
                                 <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Ballonnements : 5 astuces simples à tester dès ce soir pour un ventre plus plat</h3>
-                            </div>
-                            <div class="p-6 pt-0">
-                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Des solutions pratiques et naturelles pour soulager rapidement l'inconfort digestif et retrouver un ventre serein au quotidien.</p>
-                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                <p class="text-muted-foreground text-base leading-relaxed my-4 text-left flex-grow">Des solutions pratiques et naturelles pour soulager rapidement l'inconfort digestif et retrouver un ventre serein au quotidien.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all mt-auto">
                                     <span>Lire l'article</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                 </div>
                             </div>
                         </div>
                         <!-- Blog Post 3 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
-                            <div class="flex flex-col space-y-1.5 p-6">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
+                            <img src="images/blog-repas-rapides-sains.webp" alt="Préparation de repas sains et rapides dans des boîtes de conservation" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
                                     <span>1er Mars 2024</span>
@@ -466,18 +479,17 @@
                                 </div>
                                 <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Anti-Charge Mentale</span>
                                 <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Le guide pour préparer des repas sains en moins de 20 minutes quand on est débordée</h3>
-                            </div>
-                            <div class="p-6 pt-0">
-                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Mes meilleures stratégies de batch cooking et d'organisation pour manger sainement même avec un emploi du temps chargé.</p>
-                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                <p class="text-muted-foreground text-base leading-relaxed my-4 text-left flex-grow">Mes meilleures stratégies de batch cooking et d'organisation pour manger sainement même avec un emploi du temps chargé.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all mt-auto">
                                     <span>Lire l'article</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                 </div>
                             </div>
                         </div>
                         <!-- Blog Post 4 -->
-                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer">
-                            <div class="flex flex-col space-y-1.5 p-6">
+                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-soft hover:shadow-warm transition-all duration-300 group cursor-pointer flex flex-col">
+                            <img src="images/blog-alimentation-emotionnelle.webp" alt="Personne mangeant un carré de chocolat avec pleine conscience et sérénité" class="w-full h-48 object-cover rounded-t-lg">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
                                     <span>25 Février 2024</span>
@@ -486,10 +498,8 @@
                                 </div>
                                 <span class="inline-block bg-sage-light text-sage-dark px-3 py-1 rounded-full text-xs font-medium mb-3 self-start">Alimentation Intuitive</span>
                                 <h3 class="tracking-tight text-xl font-bold text-foreground group-hover:text-primary transition-colors text-left">Pourquoi 'manger ses émotions' n'est pas un problème (et comment le gérer avec bienveillance)</h3>
-                            </div>
-                            <div class="p-6 pt-0">
-                                <p class="text-muted-foreground text-base leading-relaxed mb-4 text-left">Une approche douce et sans culpabilité pour comprendre et accompagner votre relation émotionnelle à la nourriture.</p>
-                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all">
+                                <p class="text-muted-foreground text-base leading-relaxed my-4 text-left flex-grow">Une approche douce et sans culpabilité pour comprendre et accompagner votre relation émotionnelle à la nourriture.</p>
+                                <div class="flex items-center text-primary font-medium group-hover:gap-3 transition-all mt-auto">
                                     <span>Lire l'article</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                                 </div>
